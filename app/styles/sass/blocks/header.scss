@@ -1,0 +1,122 @@
+.top-block {
+   font-size: calc(10px + 6 * ((100vw - 375px) / (1920 - 320)));
+
+   .top-block__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 12vh;
+   }
+}
+
+.top-block__account {
+   display: flex;
+   padding: 0 20px;
+
+   .top-block__icon {
+      margin-left: 20px;
+   }
+
+   .top-block__data {
+      .top-block__name,
+      .top-block__number {
+         display: block;
+         color: $main-color_green;
+      }
+
+      .top-block__name--bold,
+      .top-block__number--bold {
+         display: inline;
+         font-weight: 700;
+      }
+   }
+
+   .top-block__hello-message--mobile {
+      display: none;
+   }
+}
+
+.top-block__btn {
+   margin-left: 20px;
+   
+   .top-block__btn-back {
+      color: $main-color_green;
+   }
+
+   .triangle-to-right {
+      margin-left: 15px;
+      border-left: 18px solid $main-color-green;
+      @include triangle-btn;
+   }
+}
+
+.top-block__hello-massage {
+   -webkit-box-shadow: 0px 10px 17px -15px rgba(34, 60, 80, 0.6) inset;
+   -moz-box-shadow: 0px 10px 17px -15px rgba(34, 60, 80, 0.6) inset;
+   box-shadow: 0px 10px 17px -15px rgba(34, 60, 80, 0.6) inset;
+   background-color: #f5f5f5;
+   padding: 0 60px;
+   display: flex;
+   align-items: center;
+   height: 8vh;
+
+   .top-block__text {
+      color: $main-color_grey;
+   }
+
+   .top-block__text--bold {
+      font-weight: 700;
+   }
+}
+
+//MEDIA QUERIES
+@media (max-width: 1200px) {
+   .top-block__btn .triangle-to-right {
+      border-left: 14px solid $main-color_green;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      margin-left: 10px;
+   }
+}
+
+@media (max-width: 768px) {
+   .top-block .top-block__inner {
+      height: 10vh;
+   }
+
+   .top-block__account {
+      padding: 20px 10px;
+   
+      .top-block__hello-message--mobile {
+         display: block;
+         color: $main-color-orange;
+         margin-top: 5px;
+   
+         .top-block__text--bold {
+            font-weight: 700;
+         }
+      }
+   
+      .top-block__icon {
+         margin-left: 10px;
+      }
+   }
+
+   .top-block__btn {
+      display: none;
+   }
+
+   .top-block__hello-massage {
+      display: none;
+   }
+}
+
+@media (max-width: 1280px) {
+   .top-block__account {
+      padding: 25px 20px;
+   }
+
+   .top-block__hello-massage {
+      padding: 20px 60px;
+   }
+}

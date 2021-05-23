@@ -1,0 +1,62 @@
+html {
+   box-sizing: border-box;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   outline: 0;
+   border: 0 none;
+   box-sizing: inherit;
+}
+
+*:before, *:after {
+   box-sizing: inherit;
+}
+
+// FONTS
+@font-face {
+   font-family: 'Arimo', sans-serif;
+   src: url('/fonts/arimo/arimo-v17-hebrew-regular.woff2');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Arimo', sans-serif;
+   src: url('/fonts/arimo/arimo-v17-hebrew-700.woff2');
+   font-weight: 700;
+   font-style: normal;
+}
+
+//MIXINS
+@mixin transition {
+   -webkit-transition: all 0.35s ease;
+   transition: all 0.35s ease;
+}
+
+@mixin triangle-btn {
+   display: inline-block;
+   vertical-align: middle;
+   width: 0;
+   height: 0;
+   border-top: 10px solid transparent;
+   border-bottom: 10px solid transparent;
+}
+
+// COLOR VARIABLES
+$main-color_green: #009c41;
+$main-color_grey: #5f5f5f;
+$main-color-light-grey: #c4c4c4;
+$main-color-white: #ffffff;
+$main-color-orange: #ff7728;
+$main-color-dark-blue: #1d4076;
+
+body {
+   font-family: 'Arimo', sans-serif;
+   font-weight: 400;
+}
+
+a {
+   text-decoration: none;
+}
