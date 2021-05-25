@@ -12,6 +12,10 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+
+   .offers__inner {
+      width: 55%;
+   }
 }
 
 .offers__top {
@@ -126,28 +130,27 @@
    }
 
    .row__item--width-xxs {
-      width: 60px;
+      width: 5%;
    }
 
    .row__item--width-xs {
-      width: 105px;
+      width: 9%;
    }
 
    .row__item--width-s {
-      width: 125px;
+      width: 10%;
    }
 
    .row__item--width-m {
-      width: 140px;
+      width: 13%;
    }
 
    .row__item--width-l {
-      width: 170px;
+      width: 15%;
    }
 
    .row-block {
       position: relative;
-      //overflow: visible;
 
       .contacts {
          position: absolute;
@@ -220,6 +223,10 @@
 }
 
 @media (max-width: 1440px) {
+   .offers-container .offers__inner {
+      width: 70%;
+   }
+
    .offers__top .offerings, .offers__top {
       .policy,
       .offerings {
@@ -238,39 +245,15 @@
    .offers__info .row-block .contacts {
       right: -125px;
    }
-
-   .offers__info {
-      .row__item--width-xxs {
-         width: 50px;
-      }
-   
-      .row__item--width-m {
-         width: 70px;
-      }
-   
-      .row__item--width-l {
-         width: 110px;
-      }
-   }
 }
 
 @media (max-width: 1200px) {
-   .offers__info .row-block .contacts {
-      right: -110px;
+   .offers-container .offers__inner {
+      width: 77%;
    }
 
-   .offers__info {
-      .row__item--width-xs {
-         width: 85px;
-      }
-   
-      .row__item--width-s {
-         width: 110px;
-      }
-
-      .row__item--width-m {
-         width: 50px;
-      }
+   .offers__info .row-block .contacts {
+      right: -110px;
    }
 
    .offers__search-form .offers__btn-new-offer .triangle-to-left {
