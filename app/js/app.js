@@ -6,8 +6,15 @@
 // // Import vendor jQuery plugin example (not module)
 // require('~/app/libs/mmenu/dist/mmenu.js')
 
-document.addEventListener('DOMContentLoaded', () => {
+// 100VH MOBILE FIX
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-	// Custom JS
+window.addEventListener('resize', () => {
+   let vh = window.innerHeight * 0.01;
+   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-})
+   if (window.innerWidth < 1025) {
+      swiperPeople.mousewheel.disable();
+   }
+});
