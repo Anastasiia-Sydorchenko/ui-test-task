@@ -7,6 +7,10 @@
       align-items: center;
       height: 12vh;
    }
+
+   .top-block__hello-massage {
+      height: 8vh;
+   }
 }
 
 .top-block__account {
@@ -58,7 +62,6 @@
    padding: 0 60px;
    display: flex;
    align-items: center;
-   height: 8vh;
 
    .top-block__text {
       color: $main-color_grey;
@@ -80,10 +83,6 @@
 }
 
 @media (max-width: 768px) {
-   .top-block .top-block__inner {
-      height: 10vh;
-   }
-
    .top-block__account {
       padding: 20px 10px;
    

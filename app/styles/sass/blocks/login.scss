@@ -9,8 +9,6 @@
    background-size: cover;
    background-repeat: no-repeat;
    display: flex;
-   flex-direction: column;
-   align-items: center;
    justify-content: center;
 
    .main__title {
@@ -120,6 +118,13 @@
    }
 }
 
+.main-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
 // MEDIA QUERIES
 @media (max-width: 1400px) {
    .main {
@@ -135,6 +140,30 @@
       border-top: 7px solid transparent;
       border-bottom: 7px solid transparent;
       margin-left: 10px;
+   }
+}
+
+@media (max-width: 1024px) {
+   .login-page {
+      .top-block {
+         .top-block__inner {
+            height: 12vh;
+         }
+
+         .top-block__hello-massage {
+            height: 8vh;
+         }
+      }
+   }
+
+   .main {
+      height: 90vh;
+   }
+}
+
+@media (max-width: 991px) {
+   .top-block__hello-massage .top-block__text {
+      display: none;
    }
 }
 
@@ -154,7 +183,7 @@
 @media (max-width: 768px) {
    .main {
       background-image: url("../images/dist/main-mobile__bg.png");
-      height: 90vh;
+      height: 88vh;
 
       .main__title {
          padding-bottom: 15px;
@@ -171,11 +200,15 @@
          }
       }
    }
+   .main-container {
+      width: 90%;
+   }
 }
 
 @media (max-width: 576px) {
    .main {      
-      justify-content: flex-start;
+      justify-content: center;
+
       .main__title {
          margin-top: 20px;
          margin-bottom: 50px;
@@ -191,11 +224,7 @@
             width: 80%;
          }
       }
-   
-      .main__text {
-         display: none;
-      }
-   
+
       .main___text--mobile {
          display: block;
          padding: 0 45px;
@@ -251,6 +280,14 @@
 
 @media (max-width: 375px) {
    .main {
+      .main__title {
+         margin-bottom: 30px;
+      }
+
+      .main__text {
+         padding-top: 0;
+      }
+
       .main__form {
          .main__form-name,
          .main__form-password {
@@ -270,5 +307,57 @@
             margin: 0;
          }
       }
+   }
+}
+
+@media (min-width: 320px) {
+   .main .main__title {
+      margin-bottom: 15px;
+
+      .main__header {
+         margin: 0;
+      }
+   }
+
+   .main .main__text {
+      font-size: 20px;
+      padding: 15px;
+   }
+
+   .main .main__form {
+      margin-bottom: 15px;
+
+      .main__form-name,
+      .main__form-password {
+         margin-bottom: 30px;
+      }
+   } 
+}
+
+// mobile & tablet landscape orientation
+@media screen and (min-width:320px) and (max-width:991px) and (orientation: landscape) {
+   .main {
+      height: auto;
+      padding-bottom: 30px;
+   }
+
+   .login-page .top-block {
+      height: 20vh;
+
+      .top-block__inner {
+         height: 20vh;
+      }
+   }
+}
+
+@media screen and (min-width:991px) and (max-width:1024px) and (orientation: landscape) {
+   .main {
+      height: 80vh;
+   }
+}
+
+@media screen and (min-width:991px) and (max-width:1024px) and (orientation: portrait) {
+   .main {
+      height: 80vh;
    }
 }
