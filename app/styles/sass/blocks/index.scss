@@ -38,41 +38,24 @@
       justify-content: center;
    }
 
+   .offerings {
+      color: $main-color-white;
+      background-color: $main-color-orange;
+      z-index: 2;
+   }
+
    .policy {
       color: $main-color_grey;
       background-color: $main-color_white;
       z-index: 1;
       margin-right: -55px;
    }
-
-   .offerings {
-      color: $main-color-white;
-      background-color: $main-color-orange;
-      z-index: 2;
-   }
 }
 
 .offers__search-form {
-   margin-bottom: 35px;
    display: flex;
    justify-content: space-between;
-
-   .offers__btn-new-offer {
-      margin-right: 30px;
-      width: 30%;
-      height: 60px;
-      border-radius: 35px;
-      background-color: $main-color-green;
-      font-size: calc(16px + 6 * ((100vw - 375px) / (1920 - 320)));
-      position: relative;
-      color: $main-color_white;
-
-      .triangle-to-left{
-         margin-right: 15px;
-         border-right: 18px solid $main-color-white;
-         @include triangle-btn;
-      }
-   }
+   margin-bottom: 35px;
 
    .search-wrapper {
       width: 100%;
@@ -102,14 +85,33 @@
       }
    }
 
-   .offers__btn-new-offer--mobile {
-      display: none;
+   .offers__btn-new-offer {
+      position: relative;
+      width: 30%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 30px;
+      border-radius: 35px;
+      background-color: $main-color-green;
+      font-size: calc(16px + 6 * ((100vw - 375px) / (1920 - 320)));
+      color: $main-color_white;
+
+      .triangle-to-left{
+         margin-right: 15px;
+         border-right: 18px solid $main-color-white;
+         @include triangle-btn;
+      }
+
+      .btn-plus {
+         display: none;
+      }
    }
 }
 
 .offers__info {
    margin-bottom: 50px;
-   width: 100%;
 
    .top-row {
       color: $main-color-white;
@@ -127,6 +129,11 @@
       align-items: center;
       height: 35px;
       padding: 5px 0;
+   }
+
+   .row__item-title,
+   .row__item-title--green {
+      display: none;
    }
 
    .row__item--width-xxs {
@@ -157,6 +164,23 @@
          right: -130px;
          opacity: 0;
          padding-left: 60px;
+         display: flex;
+
+         .contacts__edit,
+         .contacts__mail {
+            display: flex;
+            flex-direction: column;
+   
+            .contacts__text {
+               font-size: 14px;
+               color: $main-color-white;
+               margin-top: 5px;
+            }
+         }
+   
+         .contacts__mail {
+            margin-right: 10px;
+         }
       }
 
       &:hover {
@@ -166,6 +190,7 @@
             overflow: visible;
             @include transition;
          }
+
          .contacts {
             opacity: 1;
             @include transition;
@@ -173,53 +198,34 @@
       }
    }
 
-   .contacts {
-      position: absolute;
-      right: 15px;
-      display: flex;
+   .row-block__line {
+      display: none;
+   }
 
-      .contacts__edit,
-      .contacts__mail {
-         display: flex;
-         flex-direction: column;
-
-         .contacts__text {
-            font-size: 14px;
-            color: $main-color-white;
-            margin-top: 5px;
-         }
-      }
-
-      .contacts__mail {
-         margin-right: 10px;
-      }
+   .car-icon {
+      display: none;
    }
 
    .row {
-      color: black;
-      background-color: $main-color-white;
+      position: relative;
       margin-bottom: 10px;
       border-radius: 35px;
-      position: relative;
+      color: black;
+      background-color: $main-color-white;
 
-      .row__item {
-         display: inline-block;
-         border-left: 1px solid #E5E5E5;
+      .row-section {
          text-align: center;
+         border-left: 1px solid #E5E5E5;
       }
 
-      .row__item--width-m {
-         border-left: none;
+      .row-section-check {
+         border: none;
       }
 
       .row__check-icon--hidden {
          z-index: -1;
       }
    }
-}
-
-.offers__info--mobile {
-   display: none;
 }
 
 @media (max-width: 1440px) {
@@ -234,12 +240,16 @@
       }
    } 
 
-   .offers__search-form .search-wrapper .offer__search {
-      height: 45px;
-   }
+   .offers__search-form {
+      .search-wrapper {
+         .offer__search {
+            height: 45px;
+         }
+      }
 
-   .offers__search-form .offers__btn-new-offer {
-      height: 45px;
+      .offers__btn-new-offer {
+         height: 45px;
+      }
    }
 
    .offers__info .row-block .contacts {
@@ -249,7 +259,7 @@
 
 @media (max-width: 1200px) {
    .offers-container .offers__inner {
-      width: 77%;
+      width: 70%;
    }
 
    .offers__info .row-block .contacts {
@@ -265,79 +275,154 @@
 }
 
 @media (max-width: 1024px) {
+   .offers__search-form .offers__btn-new-offer {
+      width: 40%;
+   }
+
    .offers__info {
-      display: none;
-   }
+      .top-row {
+         display: none;
+      }
 
-   .offers__inner {
-      width: 70%;
-   }
+      .row__item-title,
+      .row__item-title--green {
+         display: block;
+         font-size: 18px;
+         color: #797979;
+         text-align: right;
+      }
 
-   .offers__info--mobile {
-      display: block;
-      background-color: $main-color-white;
-      border-radius: 30px;
-      width: 100%;
-      margin-bottom: 35px;
-
-      .offers__info-top {
+      .row__item-title--green {
+         color: $main-color-green;
+         font-weight: 700;
+         font-size: calc(18px + 2 * ((100vw - 320px) / (1025 - 320)));
+         padding-top: 35px;
          display: flex;
-         justify-content: space-between;
-         align-items: center;
-         padding: 15px;
+         align-self: flex-start;
+      }
 
-         .contacts {
+      .row {
+         box-sizing: border-box;
+         flex-direction: column;
+         flex-wrap: wrap;
+         justify-content: flex-end;
+         height: 280px;
+         padding: 40px 15px 15px 15px;
+
+         .row-section {
+            border-left: none;
+            width: 33%;
+            text-align: right;
+            margin-top: 20px;
             display: flex;
-            flex-direction: row;
-            
-            & > a {
-               display: flex;
-               margin-right: 15px;
-            }
-         }
-      }
+            flex-direction: column;
 
-      hr {
-         background-color: $main-color-dark-blue;
-         height: 2px;
-         margin: 0 10px;
-      }
-
-      .offers__info-content {
-         padding: 15px 25px;
-
-         .info-block {
-            margin-bottom: 15px;
-
-            .info-block__meaning {
-               display: block;
-               color: #797979;
-               font-size: 18px;
-            }
-
-            .info-block__meaning--hidden {
-               opacity: 0;
-            }
-
-            .info-block__data {
-               display: block;
+            .row__item {
                color: $main-color-dark-blue;
                font-size: 20px;
                font-weight: 700;
             }
+         }
 
-            .info-block__data--green {
-               color: $main-color-green
-            }
+         //Table sections in mobile version are placed chaotically. So I had to create classes and use order
+      
+         .mobile-order-1 {
+            order: 1;
+         }
 
+         .mobile-order-2 {
+            order: 2;
+         }
+
+         .mobile-order-3 {
+            order: 3;
+         }
+
+         .mobile-order-4 {
+            order: 4;
+         }
+
+         .mobile-order-5 {
+            order: 5;
+         }
+
+         .mobile-order-6 {
+            order: 6;
+         }
+
+         .mobile-order-7 {
+            order: 7;
+         }
+
+         .mobile-order-8 {
+            order: 8;
+         }
+
+         .row__item--width-xxs,
+         .check-icon {
+            display: none;
          }
       }
 
-      .offers__info-content-grid {
-         display: grid;
-         grid-template-rows: 1fr 1fr 1fr;
-         grid-template-columns: 1fr 1fr 1fr;
-         column-gap: 30px;
+      .row-block {
+         margin-bottom: 30px;
+         
+         &:hover {
+            .row {
+               background-color: $main-color-white;
+            }
+         }
+
+         .car-icon {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 25px;
+            right: 20px;
+         }
+
+         .contacts {
+            opacity: 1;
+            z-index: 1;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            top: 15px;
+            right: 0;
+            padding-left: 20px;
+
+            .contacts__mail {
+               margin-right: 15px;
+            }
+
+            .contacts__edit,
+            .contacts__mail {
+
+               path {
+                  fill: $main-color-white;
+               }
+
+               circle {
+                  fill: $main-color-green;
+               }
+
+               .contacts__text {
+                  display: none;
+               }
+            }
+         }
+      }
+
+      .row-block__line {
+         display: flex;
+         position: absolute;
+         z-index: 1;
+         height: 2px;
+         width: -webkit-fill-available;
+         background-color: $main-color-dark-blue;
+         top: 70px;
+         margin: 0 15px;
       }
    }
 }
@@ -365,27 +450,10 @@
       .policy {
          height: 40px;
       }
-
-      .offerings {
-         width: 50%;
-      }
-
-      .policy {
-         width: 60%;
-      }
    }
 
-   .offers__inner {
-      width: 80%;
-   }
-
-   .offers__info--mobile .offers__info-content-grid {
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-   }
-
-   .offers__btn-new-offer--desktop {
-      display: none;
+   .offers-container .offers__inner {
+      width: 85%;
    }
 
    .offers__search-form {
@@ -393,11 +461,20 @@
       padding-bottom: 15px;
       margin-bottom: 20px;
 
-      .offers__btn-new-offer--mobile {
-         display: block;
-         width: 40px;
-         height: 40px;
+      .offers__btn-new-offer {
+         border-radius: 100%;
+         width: auto;
+         height: auto;
          margin-right: 15px;
+
+         .btn-content,
+         .triangle-to-left {
+            display: none;
+         }
+   
+         .btn-plus {
+            display: block;
+         }
       }
 
       .search-wrapper {
@@ -409,20 +486,53 @@
 }
  
 @media (max-width: 576px) {
-   .offers__inner {
+   .offers-container .offers__inner {
       width: 85%;
+   }
+
+   .offers__top {
+      .policy {
+         display: flex;
+         justify-content: flex-end;
+         padding-left: 20px;
+         width: 100%;
+      }
+
+      .offerings {
+         width: 75%;
+      }
+   }
+
+   .offers__info {      
+      .row {
+         height: 365px;
+
+         .row-section {
+            width: 45%;
+         }
+      }
    }
 }
 
 @media (max-width: 375px) {
-   .offers__info--mobile .offers__info-content .info-block {
-      .info-block__data {
-         font-size: 16px;
-      }
+   .offers-container .offers__inner {
+      width: 90%;
 
-      .info-block__meaning {
-         font-size: 15px;
+      .row {
+         height: 385px;
+
+         .row-section {
+            width: 50%;
+            margin-top: 15px;
+            line-height: 1.2;
+         }
       }
-   }   
+   }
 }
 
+// mobile & tablet landscape orientation
+@media screen and (min-width:320px) and (max-width:991px) and (orientation:landscape) {
+   .top-block .top-block__inner {
+      height: 20vh;
+   }
+}
