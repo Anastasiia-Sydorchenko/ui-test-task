@@ -534,5 +534,7 @@
 @media screen and (min-width:320px) and (max-width:991px) and (orientation:landscape) {
    .top-block .top-block__inner {
       height: 20vh;
+      height: calc(var(--vh, 1vh) * 20);
+
    }
 }

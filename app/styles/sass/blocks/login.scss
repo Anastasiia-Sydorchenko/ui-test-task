@@ -5,6 +5,7 @@
 
 .main {
    height: 80vh;
+   height: calc(var(--vh, 1vh) * 80);
    background-image: url("../images/dist/main-section__bg.png");
    background-size: cover;
    background-repeat: no-repeat;
@@ -148,6 +149,7 @@
       .top-block {
          .top-block__inner {
             height: 12vh;
+            height: calc(var(--vh, 1vh) * 12);
          }
 
          .top-block__hello-massage {
@@ -158,6 +160,7 @@
 
    .main {
       height: 90vh;
+      height: calc(var(--vh, 1vh) * 90);
    }
 }
 
@@ -178,6 +181,7 @@
    .main {
       background-image: url("../images/dist/main-mobile__bg.png");
       height: 88vh;
+      height: calc(var(--vh, 1vh) * 88);
 
       .main__title {
          padding-bottom: 15px;
@@ -337,9 +341,11 @@
 
    .login-page .top-block {
       height: 20vh;
+      height: calc(var(--vh, 1vh) * 20);
 
       .top-block__inner {
          height: 20vh;
+         height: calc(var(--vh, 1vh) * 20);
       }
    }
 }
@@ -347,11 +353,13 @@
 @media screen and (min-width:991px) and (max-width:1024px) and (orientation: landscape) {
    .main {
       height: 80vh;
+      height: calc(var(--vh, 1vh) * 80);
    }
 }
 
 @media screen and (min-width:991px) and (max-width:1024px) and (orientation: portrait) {
    .main {
       height: 80vh;
+      height: calc(var(--vh, 1vh) * 80);
    }
 }
