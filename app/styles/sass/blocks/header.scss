@@ -6,10 +6,12 @@
       justify-content: space-between;
       align-items: center;
       height: 12vh;
+      height: calc(var(--vh, 1vh) * 12);
    }
 
-   .top-block__hello-massage {
+   .top-block__hello-message {
       height: 8vh;
+      height: calc(var(--vh, 1vh) * 8);
    }
 }
 
@@ -54,7 +56,7 @@
    }
 }
 
-.top-block__hello-massage {
+.top-block__hello-message {
    -webkit-box-shadow: 0px 10px 17px -15px rgba(34, 60, 80, 0.6) inset;
    -moz-box-shadow: 0px 10px 17px -15px rgba(34, 60, 80, 0.6) inset;
    box-shadow: 0px 10px 17px -15px rgba(34, 60, 80, 0.6) inset;
@@ -105,7 +107,7 @@
       display: none;
    }
 
-   .top-block__hello-massage {
+   .top-block__hello-message {
       display: none;
    }
 }
@@ -115,7 +117,7 @@
       padding: 25px 20px;
    }
 
-   .top-block__hello-massage {
+   .top-block__hello-message {
       padding: 20px 60px;
    }
 }
